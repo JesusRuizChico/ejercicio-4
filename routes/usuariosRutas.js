@@ -2,20 +2,29 @@ const ruta=require("express").Router();
 const UsuarioClase=require("../clases/UsuarioClase");
 const UsuarioBD=require("../bd/UsuariosBD");
 
-ruta.get("/",async (req,res)=>{
-    const usuariobd= new UsuarioBD();
-    const usuariosMySql=await usuariobd.mostrarUsuarios();
-    var usuariosCorrectos=[];
-    usuariosMySql.forEach(usuario =>{
-        var usuario1 = new UsuarioClase(usuario);
-        if(usuario1.nombre!=undefined && usuario1.celular!=undefined && usuario1.correo!=undefined){
-            usuariosCorrectos.push(usuario);
-        }
-    });
+ruta.get("/", async (req, res) => {
+    try {
+        const usuariobd = new UsuarioBD();
+        const usuariosMySql = await usuariobd.mostrarUsuarios();
 
-        //console.log(usuariosCorrectos);
-        res.render("mostrarUsuarios",{usuariosCorrectos});    
+        if (usuariosMySql && usuariosMySql.length > 0) {
+            const usuariosCorrectos = usuariosMySql.map(usuario => {
+                const usuario1 = new UsuarioClase(usuario);
+                if (usuario1.nombre && usuario1.celular && usuario1.correo) {
+                    return usuario;
+                }
+            }).filter(usuario => usuario !== undefined);
+
+            res.render("mostrarUsuarios", { usuariosCorrectos });
+        } else {
+            res.status(404).send('No se encontraron usuarios');
+        }
+    } catch (error) {
+        console.error('Error al obtener los datos de los usuarios:', error);
+        res.status(500).send('Error al obtener los datos de los usuarios');
+    }
 });
+
 
 
 ruta.post("/agregarUsuario",(req,res)=>{
