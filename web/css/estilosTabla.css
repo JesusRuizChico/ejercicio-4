@@ -7,20 +7,20 @@
 table{
     width: 80%;
     border-collapse: collapse;
-    border: 3px solid purple;
+    border: 3px solid rgba(0, 13, 128, 0.674);
 }
 th{
-    background-color: pink;
+    background-color: rgb(192, 255, 248);
     color: white;
     text-align: center;
 }
 td{
     padding: 5px;
     text-align: center;
-    border: 3px solid pink;
+    border: 3px solid rgba(255, 195, 192, 0.145);
 }
 tr:nth-child(odd){
-    background-color: plum;
+    background-color: rgba(221, 160, 221, 0.684);
 }
 .contenedor{
     display: flex;

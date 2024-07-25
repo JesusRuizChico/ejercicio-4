@@ -6,7 +6,7 @@
 form{
     margin-top: 20px;
     width: 310px;
-    box-shadow: 0 0 20px pink;
+    box-shadow: 0 0 20px rgb(227, 245, 220);
     padding: 30px;
     border-radius: 7px;
 }
@@ -20,44 +20,44 @@ input{
     margin-top: 5px;
     margin-bottom: 15px;
     padding: 7px;
-    background-color: rgb(237, 218, 234);
+    background-color: rgb(237, 218, 226);
     border: 0px;
     border-radius: 5px;
-    outline-color: rgb(251, 0, 255);
+    outline-color: rgba(0, 42, 255, 0.536);
     width: 80%;
 }
 button{
     margin-top: 20px;
     padding: 7px;
-    background-color: rgb(239, 164, 243);
+    background-color: rgb(164, 243, 238);
     color: white;
     border: 0px;
     cursor: pointer;
     border-radius: 5px;
 }
 button:hover{
-    background-color: aquamarine;
+    background-color: rgb(127, 191, 255);
 }
 .correcto{
-    background-color: rgb(136, 235, 186);
-    border: 1px solid green;
+    background-color: rgb(235, 212, 136);
+    border: 1px solid rgb(0, 128, 58);
 }
 .error{
-    background-color: rgb(241, 130, 130);
+    background-color: rgb(211, 130, 241);
     border: 1px solid red;
 }
 .circleCrossNombre, .circleCrossCelular, .circleCrossCorreo{
     margin-left: 5px;
-    color: rgb(168, 0, 0);
+    color: rgb(0, 0, 168);
 }
 .ocultar{
     display: none;
 visibility: hidden;
 }
 .mensajeNombre, .mensajeCelular, .mensajeCorreo{
-    color: rgb(168, 0, 0);
+    color: rgb(3, 0, 168);
     font-size: small;
 }
 .circleCheckNombre, .circleCheckCelular, .circleCheckCorreo{
-    color: rgb(255, 47, 144);
+    color: rgba(47, 255, 158, 0.534);
 }
